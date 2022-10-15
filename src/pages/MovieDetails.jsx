@@ -4,8 +4,6 @@ import getMovieDetails from '../services/getMovieDetails';
 import MovieDetailsList from '../components/MovieDetailsList';
 import { Back, Wrapper } from './Pages.styles';
 
-
-
 export default function MovieDetails() {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState({});

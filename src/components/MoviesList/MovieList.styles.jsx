@@ -1,4 +1,5 @@
 import styles from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const List = styles.ul`
   margin: 0;
@@ -8,10 +9,6 @@ export const List = styles.ul`
   margin-right: -5px;
   margin-bottom: -5px;`;
 
-// export const LinkNav = styles(Link)`
-//   text-decoration: none;
-//   color: darkblue;
-// `;
 export const Item = styles.li`
   border: 1px solid darkblue;
   list-style: none;
@@ -28,6 +25,8 @@ export const Item = styles.li`
 
 export const Img = styles.img`
 padding: 3px;
+width: 400px;
+height: 600px;
 
 `;
 
@@ -38,3 +37,8 @@ export const Title = styles.h2`
 
 export const VoteWrapper = styles.div`  display: flex;
   justify-content: space-around;`;
+
+export const LinkNav = styles(Link)`
+  text-decoration: none;
+  color: darkblue;
+`;

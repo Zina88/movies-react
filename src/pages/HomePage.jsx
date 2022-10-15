@@ -6,7 +6,9 @@ export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getTrandingMovie().then(setMovies);
+    getTrandingMovie().then(({ results }) => {
+      setMovies(results);
+    });
   }, []);
 
   return (
