@@ -1,4 +1,4 @@
-import { useLocation, Outlet } from 'react-router-dom';
+import {  Outlet } from 'react-router-dom';
 import {
   Img,
   Wrapper,
@@ -13,7 +13,7 @@ import {
 import noPoster from '../../utilits/img/No_Poster.png';
 
 export default function MovieDetailsList({ movie }) {
-  const { id, title, genres, overview, poster_path, release_date, vote_average, vote_count } =
+  const { title, genres, overview, poster_path, release_date, vote_average, vote_count } =
     movie;
 
   return (
