@@ -1,20 +1,27 @@
 import PropTypes from 'prop-types';
+import { Wrapper, List, Item, Author, Content } from './ReviewsList.styles';
 
 export default function ReviewsList({ reviews }) {
   return (
-    <>
-      <ul>
+    <Wrapper>
+      <List>
         {reviews.map(({ id, author, content }) => (
-          <li key={id}>
-            <h4>{author}</h4>
-            <p>{content}</p>
-          </li>
+          <Item key={id}>
+            <Author>{author}</Author>
+            <Content>{content}</Content>
+          </Item>
         ))}
-      </ul>
-    </>
+      </List>
+    </Wrapper>
   );
 }
 
 ReviewsList.propTypes = {
-  reviews: PropTypes.array,
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      author: PropTypes.string,
+      content: PropTypes.string,
+    }),
+  ),
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { TbPlaylistAdd } from 'react-icons/tb';
 
 export const Img = styled.img`
   transition: all 300ms linear;
@@ -7,7 +8,7 @@ export const Img = styled.img`
 
   &:hover {
     scale: 1.02;
-    box-shadow: 1px 0 1px rgba(0, 0, 139, 0.219), 2px 3px 3px rgba(0, 0, 139, 0.219);
+    box-shadow: ${p => p.theme.boxShadow.accent};
   }
 `;
 
@@ -15,13 +16,13 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 430px 1fr;
   padding: 15px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px double ${p => p.theme.colors.accent};
   margin-bottom: 15px;
 `;
 
 export const Title = styled.h2`
-  color: darkblue;
-  font-size: 32px;
+  color: ${p => p.theme.colors.accent};
+  font-size: 42px;
   margin-bottom: 15px;
 `;
 
@@ -41,7 +42,7 @@ export const Item = styled.li`
 
 export const Vote = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 170px 170px;
   margin-bottom: 15px;
 `;
 
@@ -51,12 +52,22 @@ export const WrapperNav = styled.div`
 `;
 
 export const CustomLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+
   text-decoration: none;
   transition: all 300ms linear;
   color: inherit;
+  font-size: 20px;
 
   &.active {
-    color: #8afa;
+    color: ${p => p.theme.colors.accent};
     border-radius: 10px;
   }
+`;
+
+export const CustLogo = styled(TbPlaylistAdd)`
+  margin-right: 7px;
+  width: 25px;
+  height: 25px;
 `;

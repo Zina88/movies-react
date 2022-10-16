@@ -1,4 +1,5 @@
 import { Div, List, Item, Name, Rating, Img } from './CastList.styled';
+import PropTypes from 'prop-types';
 import noAvatar from '../../utilits/img/No-Image.png';
 
 export default function CastList({ actors }) {
@@ -12,10 +13,23 @@ export default function CastList({ actors }) {
               alt={name}
             />
             <Name>{name}</Name>
-            <Rating>Rating:{popularity}</Rating>
+            <Rating>
+              Rating: <b>{popularity}</b>
+            </Rating>
           </Item>
         ))}
       </List>
     </Div>
   );
 }
+
+CastList.propTypes = {
+  actors: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      profile_path: PropTypes.string,
+      popularity: PropTypes.number,
+    }),
+  ),
+};

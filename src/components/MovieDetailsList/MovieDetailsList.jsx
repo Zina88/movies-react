@@ -1,4 +1,4 @@
-import {  Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import {
   Img,
   Wrapper,
@@ -9,12 +9,14 @@ import {
   Vote,
   WrapperNav,
   CustomLink,
+  CustLogo,
 } from './MovieDetailsList.styled';
 import noPoster from '../../utilits/img/No_Poster.png';
+import PropTypes from 'prop-types';
+
 
 export default function MovieDetailsList({ movie }) {
-  const { title, genres, overview, poster_path, release_date, vote_average, vote_count } =
-    movie;
+  const { title, genres, overview, poster_path, release_date, vote_average, vote_count } = movie;
 
   return (
     <div>
@@ -50,10 +52,16 @@ export default function MovieDetailsList({ movie }) {
       <WrapperNav>
         <ul>
           <li>
-            <CustomLink to="cast">Cast</CustomLink>
+            <CustomLink to="cast">
+              <CustLogo />
+              Cast
+            </CustomLink>
           </li>
           <li>
-            <CustomLink to="reviews">Reviews</CustomLink>
+            <CustomLink to="reviews">
+              <CustLogo />
+              Reviews
+            </CustomLink>
           </li>
         </ul>
       </WrapperNav>
@@ -62,3 +70,20 @@ export default function MovieDetailsList({ movie }) {
     </div>
   );
 }
+
+MovieDetailsList.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+      }),
+    ),
+    overview: PropTypes.string,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    vote_count: PropTypes.number,
+  }),
+};

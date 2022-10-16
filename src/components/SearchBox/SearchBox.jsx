@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input, Button, Wrapper, Form } from './SearchBox.styled';
 import PropTypes from 'prop-types';
 
-export default function SearchBox({ onChange, value }) {
+export default function SearchBox({ onChange }) {
   const [movieName, setMovieName] = useState('');
 
   const onNameChange = e => {
@@ -29,5 +29,4 @@ export default function SearchBox({ onChange, value }) {
 
 SearchBox.propTypes = {
   onChange: PropTypes.func,
-  // value: PropTypes.string,
 };
