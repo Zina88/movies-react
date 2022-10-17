@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getTrandingMovie from '../services/api';
+import getTrandingMovie from 'services/api';
 import MoviesList from 'components/MoviesList';
 import { Wrapper, Title } from 'pages/Pages.styles';
 

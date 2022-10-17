@@ -16,7 +16,7 @@ import {
   WrapperNav,
   CustLogo,
 } from './MovieDetailsList.styled';
-import noPoster from '../../utilits/img/No_Poster.png';
+import noPoster from 'utilits/img/No_Poster.png';
 import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 import Loader from 'components/Loader';

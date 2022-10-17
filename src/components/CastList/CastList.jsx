@@ -1,6 +1,6 @@
 import { Div, List, Item, Name, Rating, Img, Alert } from './CastList.styled';
 import PropTypes from 'prop-types';
-import noAvatar from '../../utilits/img/No-Image.png';
+import noAvatar from 'utilits/img/No-Image.png';
 
 export default function CastList({ actors }) {
   return actors !== 0 && actors.length > 0 ? (

@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { List, Item, Img, Title, VoteWrapper, LinkNav, Vote } from './MovieList.styles';
-import noPoster from '../../utilits/img/No_Poster.png';
+import noPoster from 'utilits/img/No_Poster.png';
 
 export default function MoviesList({ movies }) {
   const location = useLocation();

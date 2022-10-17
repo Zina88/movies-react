@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import getMovieReviews from 'services/getMovieReviews';
-import ReviewsList from '../components/ReviewsList';
+import ReviewsList from 'components/ReviewsList';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState(null);
