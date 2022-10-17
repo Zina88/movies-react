@@ -34,6 +34,8 @@ export const Rating = styled.p`
 export const Img = styled.img`
   padding: 2px;
   margin-bottom: 10px;
+  width: 240px;
+  height: 300px;
 `;
 
 export const Alert = styled.h3`

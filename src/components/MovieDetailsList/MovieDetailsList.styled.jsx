@@ -5,7 +5,7 @@ import { TiArrowBackOutline } from 'react-icons/ti';
 
 export const Img = styled.img`
   transition: all 300ms linear;
-  width: 400px;
+  width: 350px;
 
   &:hover {
     scale: 1.02;
@@ -15,7 +15,7 @@ export const Img = styled.img`
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 430px 1fr;
+  grid-template-columns: 400px 1fr;
   padding: 15px;
   border-bottom: 2px double ${p => p.theme.colors.accent};
   margin-bottom: 15px;
@@ -50,6 +50,7 @@ export const Vote = styled.div`
 export const WrapperNav = styled.div`
   border-bottom: 1px solid #ccc;
   padding-bottom: 15px;
+  padding-left: 15px;
 `;
 
 export const CustomLink = styled(NavLink)`
@@ -101,4 +102,9 @@ export const BackLogo = styled(TiArrowBackOutline)`
   margin-right: 7px;
   width: 15px;
   height: 15px;
+`;
+
+export const CustomList = styled.ul``;
+export const CustomItem = styled.li`
+  display: inline;
 `;

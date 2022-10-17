@@ -15,6 +15,8 @@ import {
   CustomLink,
   WrapperNav,
   CustLogo,
+  CustomList,
+  CustomItem,
 } from './MovieDetailsList.styled';
 import noPoster from 'utilits/img/No_Poster.png';
 import PropTypes from 'prop-types';
@@ -71,20 +73,20 @@ export default function MovieDetailsList({ movie }) {
       </Wrapper>
 
       <WrapperNav>
-        <ul>
-          <li>
+        <CustomList>
+          <CustomItem>
             <CustomLink to="cast">
               <CustLogo />
               Cast
             </CustomLink>
-          </li>
-          <li>
+          </CustomItem>
+          <CustomItem>
             <CustomLink to="reviews">
               <CustLogo />
               Reviews
             </CustomLink>
-          </li>
-        </ul>
+          </CustomItem>
+        </CustomList>
       </WrapperNav>
 
       <Suspense fallback={<Loader />}>

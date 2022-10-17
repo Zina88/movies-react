@@ -16,7 +16,7 @@ export const Item = styles.li`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   transition: all 300ms linear; 
 
-&:hover{
+&:hover {
   scale: 1.01;
   box-shadow: 0px 1px 1px rgba(200, 101, 247, 0.22), 0px 4px 4px rgba(200, 101, 247, 0.16), 1px 4px 6px rgba(200, 101, 247, 0.26);
 }
