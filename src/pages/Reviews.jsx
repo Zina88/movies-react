@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import getMovieReviews from 'services/getMovieReviews';
-import ReviewsList from '../components/ReviewsList'
+import ReviewsList from '../components/ReviewsList';
 
 export default function Reviews() {
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState(null);
   const { moviesId } = useParams();
 
   useEffect(() => {
@@ -13,9 +13,5 @@ export default function Reviews() {
     });
   }, [moviesId]);
 
-  return reviews && reviews.length > 0 ? (
-    <ReviewsList reviews={reviews} />
-  ) : (
-    <h2>We don't have any reviews for this movie!</h2>
-  );
+  return <ReviewsList reviews={reviews} />;
 }

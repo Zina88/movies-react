@@ -18,3 +18,7 @@ margin-bottom: 7px;
 
 export const Content = styles.p`
 `;
+
+export const Alert = styles.h3`
+padding: 15px;
+color: ${p => p.theme.colors.accent}`;

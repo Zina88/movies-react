@@ -4,7 +4,6 @@ import getMovieDetails from '../services/getMovieDetails';
 import MovieDetailsList from '../components/MovieDetailsList';
 import { Back, Wrapper, BackLogo } from './Pages.styles';
 
-
 export default function MovieDetails() {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState({});
@@ -19,7 +18,9 @@ export default function MovieDetails() {
     <Wrapper>
       <Link to={backLink}>
         <Back type="button">
-          <BackLogo />Back</Back>
+          <BackLogo />
+          Back
+        </Back>
       </Link>
 
       <MovieDetailsList movie={movie} />

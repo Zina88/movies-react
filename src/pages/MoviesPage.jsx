@@ -1,14 +1,13 @@
-import { useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import getSearchMovie from 'services/getSearchMovie';
 import SearchBox from 'components/SearchBox';
 import MoviesList from 'components/MoviesList';
 
 export default function MoviesPage() {
-  const [movies, setMovies] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const query = searchParams.get('query');
+  const [movies, setMovies] = useState(null);
+  const { search } = useLocation();
+  const query = new URLSearchParams(search).get('query') ?? '';
 
   useEffect(() => {
     if (query !== '') {
@@ -18,15 +17,10 @@ export default function MoviesPage() {
     }
   }, [query]);
 
-  const handleSubmit = value => {
-    setMovies([...value]);
-    setSearchParams(value !== '' ? { query: value } : {});
-  };
-
   return (
     <div>
-      <SearchBox onChange={handleSubmit} value={query} />
-      {query !== null && <MoviesList movies={movies} />}
+      <SearchBox value={query} />
+      {movies && <MoviesList movies={movies} />}
     </div>
   );
 }

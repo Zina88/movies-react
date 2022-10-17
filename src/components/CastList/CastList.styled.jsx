@@ -23,6 +23,7 @@ export const Name = styled.h3`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 `;
 
 export const Rating = styled.p`
@@ -33,5 +34,4 @@ export const Rating = styled.p`
 export const Img = styled.img`
   padding: 2px;
   margin-bottom: 10px;
-  width: 210px;
 `;

@@ -4,7 +4,7 @@ import getMovieCredits from 'services/getMovieCredits';
 import CastList from 'components/CastList';
 
 export default function Cast() {
-  const [actors, setActors] = useState();
+  const [actors, setActors] = useState(null);
   const { moviesId } = useParams();
 
   useEffect(() => {
