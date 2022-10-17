@@ -7,9 +7,9 @@ import Reviews from 'pages/Reviews';
 import Loader from 'components/Loader';
 import SharedLayout from 'components/SharedLayout';
 
-const HomePage = lazy(() => import('../../pages/HomePage'));
-const MoviesPage = lazy(() => import('../../pages/MoviesPage'));
-const MovieDetails = lazy(() => import('../../pages/MovieDetails'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const MoviesPage = lazy(() => import('pages/MoviesPage'));
+const MovieDetails = lazy(() => import('pages/MovieDetails'));
 
 function App() {
   return (
