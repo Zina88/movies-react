@@ -14,7 +14,6 @@ import {
 import noPoster from '../../utilits/img/No_Poster.png';
 import PropTypes from 'prop-types';
 
-
 export default function MovieDetailsList({ movie }) {
   const { title, genres, overview, poster_path, release_date, vote_average, vote_count } = movie;
 
