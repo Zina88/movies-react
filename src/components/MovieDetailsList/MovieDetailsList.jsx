@@ -15,7 +15,8 @@ import noPoster from '../../utilits/img/No_Poster.png';
 import PropTypes from 'prop-types';
 
 export default function MovieDetailsList({ movie }) {
-  const { title, genres, overview, poster_path, release_date, vote_average, vote_count } = movie;
+  const { original_title, genres, overview, poster_path, release_date, vote_average, vote_count } =
+    movie;
 
   return (
     <div>
@@ -23,11 +24,11 @@ export default function MovieDetailsList({ movie }) {
         <div>
           <Img
             src={poster_path ? `https://image.tmdb.org/t/p/w400/${poster_path}` : noPoster}
-            alt={title}
+            alt={original_title}
           />
         </div>
         <div>
-          <Title> {title}</Title>
+          <Title> {original_title}</Title>
           <Release>
             Data release: <b>{release_date}</b>
           </Release>
@@ -72,7 +73,7 @@ export default function MovieDetailsList({ movie }) {
 
 MovieDetailsList.propTypes = {
   movie: PropTypes.shape({
-    title: PropTypes.string,
+    original_title: PropTypes.string,
     genres: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number,

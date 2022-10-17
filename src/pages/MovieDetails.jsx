@@ -6,7 +6,8 @@ import { Back, Wrapper, BackLogo } from './Pages.styles';
 
 export default function MovieDetails() {
   const { moviesId } = useParams();
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null);
+
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -23,7 +24,7 @@ export default function MovieDetails() {
         Back
       </Back>
 
-      <MovieDetailsList movie={movie} />
+      {movie && <MovieDetailsList movie={movie} />}
     </Wrapper>
   );
 }
