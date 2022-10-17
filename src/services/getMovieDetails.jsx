@@ -8,5 +8,4 @@ const getMovieDetails = async moviesId => {
   return data;
 };
 
-
 export default getMovieDetails;
