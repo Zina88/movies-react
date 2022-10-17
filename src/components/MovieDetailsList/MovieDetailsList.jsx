@@ -13,6 +13,8 @@ import {
 } from './MovieDetailsList.styled';
 import noPoster from '../../utilits/img/No_Poster.png';
 import PropTypes from 'prop-types';
+import { Suspense } from 'react';
+import Loader from 'components/Loader';
 
 export default function MovieDetailsList({ movie }) {
   const { original_title, genres, overview, poster_path, release_date, vote_average, vote_count } =
@@ -66,7 +68,9 @@ export default function MovieDetailsList({ movie }) {
         </ul>
       </WrapperNav>
 
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
