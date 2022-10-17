@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { TbPlaylistAdd } from 'react-icons/tb';
+import { TiArrowBackOutline } from 'react-icons/ti';
 
 export const Img = styled.img`
   transition: all 300ms linear;
@@ -70,4 +71,34 @@ export const CustLogo = styled(TbPlaylistAdd)`
   margin-right: 7px;
   width: 25px;
   height: 25px;
+`;
+
+export const WrapperBtn = styled.div`
+  padding: 15px 15px 0 15px;
+`;
+
+export const Back = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  color: ${p => p.theme.colors.accent};
+  border: 1px solid ${p => p.theme.colors.accent};
+  padding: 5px 15px 5px 10px;
+  border-radius: 3px;
+  transition: all 250ms linear;
+
+  &:active,
+  &:hover {
+    background-color: ${p => p.theme.colors.accent};
+    color: white;
+    border: 1px solid ${p => p.theme.colors.accent};
+  }
+`;
+
+export const BackLogo = styled(TiArrowBackOutline)`
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
 `;

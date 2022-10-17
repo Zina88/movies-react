@@ -35,3 +35,8 @@ export const Img = styled.img`
   padding: 2px;
   margin-bottom: 10px;
 `;
+
+export const Alert = styled.h3`
+  padding: 15px;
+  color: ${p => p.theme.colors.accent};
+`;

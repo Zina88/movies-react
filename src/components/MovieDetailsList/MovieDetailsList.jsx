@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import {
   Img,
   Wrapper,
@@ -7,8 +9,11 @@ import {
   Genres,
   Item,
   Vote,
-  WrapperNav,
+  WrapperBtn,
+  Back,
+  BackLogo,
   CustomLink,
+  WrapperNav,
   CustLogo,
 } from './MovieDetailsList.styled';
 import noPoster from '../../utilits/img/No_Poster.png';
@@ -17,11 +22,24 @@ import { Suspense } from 'react';
 import Loader from 'components/Loader';
 
 export default function MovieDetailsList({ movie }) {
+  const navigate = useNavigate();
+
   const { original_title, genres, overview, poster_path, release_date, vote_average, vote_count } =
     movie;
 
+  const back = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
+      <WrapperBtn>
+        <Back type="button" onClick={back}>
+          <BackLogo />
+          Back
+        </Back>
+      </WrapperBtn>
+
       <Wrapper>
         <div>
           <Img
@@ -51,6 +69,7 @@ export default function MovieDetailsList({ movie }) {
           </p>
         </div>
       </Wrapper>
+
       <WrapperNav>
         <ul>
           <li>

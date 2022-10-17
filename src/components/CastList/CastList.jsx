@@ -1,9 +1,9 @@
-import { Div, List, Item, Name, Rating, Img } from './CastList.styled';
+import { Div, List, Item, Name, Rating, Img, Alert } from './CastList.styled';
 import PropTypes from 'prop-types';
 import noAvatar from '../../utilits/img/No-Image.png';
 
 export default function CastList({ actors }) {
-  return (
+  return actors !== 0 && actors.length > 0 ? (
     <Div>
       <List>
         {actors.map(({ id, name, profile_path, popularity }) => (
@@ -20,6 +20,8 @@ export default function CastList({ actors }) {
         ))}
       </List>
     </Div>
+  ) : (
+    <Alert>We don't have any actors for this movie :(</Alert>
   );
 }
 
