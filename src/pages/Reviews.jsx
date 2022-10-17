@@ -13,5 +13,5 @@ export default function Reviews() {
     });
   }, [moviesId]);
 
-  return <ReviewsList reviews={reviews} />;
+  return reviews && <ReviewsList reviews={reviews} />;
 }
