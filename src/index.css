@@ -31,3 +31,8 @@ li {
 a {
   text-decoration: none;
 }
+
+.basicLightbox {
+  display: flex;
+  justify-content: center;
+}

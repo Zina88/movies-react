@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import {
   Img,
@@ -25,13 +25,12 @@ import Loader from 'components/Loader';
 
 export default function MovieDetailsList({ movie }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { original_title, genres, overview, poster_path, release_date, vote_average, vote_count } =
     movie;
 
-  const back = () => {
-    navigate(-1);
-  };
+  const back = () => navigate(location?.state?.from ?? '/');
 
   return (
     <div>
@@ -84,6 +83,12 @@ export default function MovieDetailsList({ movie }) {
             <CustomLink to="reviews">
               <CustLogo />
               Reviews
+            </CustomLink>
+          </CustomItem>
+          <CustomItem>
+            <CustomLink to="video">
+              <CustLogo />
+              Video
             </CustomLink>
           </CustomItem>
         </CustomList>

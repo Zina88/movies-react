@@ -1,10 +1,23 @@
-import { Div, List, Item, Name, Rating, Img, Alert } from './CastList.styled';
+import { useNavigate } from 'react-router-dom';
+import { Div, List, Item, Name, Rating, Img, Alert, Wrapper, Btn } from './CastList.styled';
 import PropTypes from 'prop-types';
 import noAvatar from 'utilits/img/No-Image.png';
 
 export default function CastList({ actors }) {
+  const navigate = useNavigate();
+
+  const back = () => {
+    navigate(-1);
+  };
+
   return actors !== 0 && actors.length > 0 ? (
     <Div>
+      <Wrapper>
+        <Btn type="button" onClick={back}>
+          Back
+        </Btn>
+      </Wrapper>
+
       <List>
         {actors.map(({ id, name, profile_path, popularity }) => (
           <Item key={id}>
