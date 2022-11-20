@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { List, Item, Img, Title, VoteWrapper, LinkNav, Vote } from './MovieList.styles';
+import { Wrapper, List, Item, Img, Title, VoteWrapper, LinkNav, Vote } from './MovieList.styles';
 import noPoster from 'utilits/img/No_Poster.png';
 import Loader from 'components/Loader';
 
@@ -9,7 +9,7 @@ export default function MoviesList({ movies }) {
   const location = useLocation();
 
   return (
-    <div>
+    <Wrapper>
       <List>
         {movies.map((movies, index) => (
           <Item key={index}>
@@ -17,7 +17,7 @@ export default function MoviesList({ movies }) {
               <Img
                 src={
                   movies.poster_path
-                    ? `https://image.tmdb.org/t/p/w400/${movies.poster_path}`
+                    ? `https://image.tmdb.org/t/p/w500/${movies.poster_path}`
                     : noPoster
                 }
                 alt={movies.title}
@@ -39,7 +39,7 @@ export default function MoviesList({ movies }) {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </div>
+    </Wrapper>
   );
 }
 

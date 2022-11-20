@@ -21,8 +21,8 @@ export default function Video() {
         `<iframe
           id=${id}
           src="https://youtube.com/embed/${key}"
-          width="720"
-          height="400"
+          width="420"
+          height="300"
           frameborder="0"
           allowfullscreen
           allow="autoplay; encrypted-media"

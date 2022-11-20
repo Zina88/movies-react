@@ -1,20 +1,45 @@
 import styles from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const Wrapper = styles.div`
+min-width: 320px;
+
+@media (min-width: 768px) {
+   min-width: 768px;
+}
+
+@media (min-width: 1200px) {
+  min-width: 1200px;
+}
+
+`;
+
 export const List = styles.ul`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin-right: -7px;
-  margin-bottom: -7px;`;
+  grid-template-columns: repeat(1, 1fr);
+
+  margin-bottom: -7px;
+  
+@media (min-width: 768px) {  
+    margin-right: -7px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+}
+  `;
 
 export const Item = styles.li`
-
   list-style: none;
   text-align: center;
-  margin-right: 7px;
   margin-bottom: 7px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   transition: all 300ms linear; 
+
+  @media (min-width: 768px) { 
+    margin-right: 7px;
+  }
 
 &:hover {
   scale: 1.01;
@@ -23,9 +48,8 @@ export const Item = styles.li`
 `;
 
 export const Img = styles.img`
-width: 400px;
-height: 470px;
 margin-bottom: 10px;
+min-width: 100%;
 `;
 
 export const Title = styles.h2`

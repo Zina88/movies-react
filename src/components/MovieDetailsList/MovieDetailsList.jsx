@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import {
+  ImgWrapper,
   Img,
   Wrapper,
   Title,
@@ -42,12 +43,12 @@ export default function MovieDetailsList({ movie }) {
       </WrapperBtn>
 
       <Wrapper>
-        <div>
+        <ImgWrapper>
           <Img
-            src={poster_path ? `https://image.tmdb.org/t/p/w400/${poster_path}` : noPoster}
+            src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : noPoster}
             alt={original_title}
           />
-        </div>
+        </ImgWrapper>
         <div>
           <Title> {original_title}</Title>
           <Release>

@@ -3,9 +3,15 @@ import { NavLink } from 'react-router-dom';
 import { TbPlaylistAdd } from 'react-icons/tb';
 import { TiArrowBackOutline } from 'react-icons/ti';
 
+export const ImgWrapper = styled.div`
+  @media (min-width: 768px) {
+    margin-right: 15px;
+  }
+`;
+
 export const Img = styled.img`
   transition: all 300ms linear;
-  width: 350px;
+  width: 100%;
 
   &:hover {
     scale: 1.02;
@@ -14,11 +20,14 @@ export const Img = styled.img`
 `;
 
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 400px 1fr;
   padding: 15px;
   border-bottom: 2px double ${p => p.theme.colors.accent};
-  margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    min-width: 768px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -49,9 +58,21 @@ export const Vote = styled.div`
 
 export const WrapperNav = styled.div`
   border-bottom: 1px solid #ccc;
-  padding-bottom: 15px;
-  padding-left: 15px;
+  padding: 15px;
+
+  @media screen(min-width: 768px) {
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
 `;
+
+export const CustomList = styled.ul`
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: space-around;
+  }
+`;
+export const CustomItem = styled.li``;
 
 export const CustomLink = styled(NavLink)`
   display: flex;
@@ -102,9 +123,4 @@ export const BackLogo = styled(TiArrowBackOutline)`
   margin-right: 7px;
   width: 15px;
   height: 15px;
-`;
-
-export const CustomList = styled.ul``;
-export const CustomItem = styled.li`
-  display: inline;
 `;

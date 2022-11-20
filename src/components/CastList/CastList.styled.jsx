@@ -5,15 +5,26 @@ export const Div = styled.div`
 `;
 
 export const List = styled.ul`
-  display: flex;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(7, 1fr);
+
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: -7px;
+  margin-right: -7px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(7, 1fr);
+  }
 `;
 
 export const Item = styled.li`
   box-shadow: ${p => p.theme.boxShadow.primary};
   transition: all 300ms linear;
+  margin-bottom: 7px;
+  margin-right: 7px;
 `;
 
 export const Name = styled.h3`
@@ -34,8 +45,7 @@ export const Rating = styled.p`
 export const Img = styled.img`
   padding: 2px;
   margin-bottom: 10px;
-  width: 240px;
-  height: 300px;
+  width: 100%;
 `;
 
 export const Alert = styled.h3`
