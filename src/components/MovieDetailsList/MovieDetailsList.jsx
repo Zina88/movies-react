@@ -56,7 +56,7 @@ export default function MovieDetailsList({ movie }) {
           </Release>
           <Vote>
             <p>
-              Vote Average: <b>{vote_average}</b>
+              Vote Average: <b>{vote_average ? vote_average.toFixed(1) : '-'}</b>
             </p>
             <p>
               Vote Count: <b>{vote_count}</b>
@@ -87,9 +87,9 @@ export default function MovieDetailsList({ movie }) {
             </CustomLink>
           </CustomItem>
           <CustomItem>
-            <CustomLink to="video">
+            <CustomLink to="trailer">
               <CustLogo />
-              Video
+              Trailer
             </CustomLink>
           </CustomItem>
         </CustomList>

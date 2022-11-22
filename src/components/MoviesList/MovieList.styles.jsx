@@ -57,15 +57,15 @@ export const Title = styles.h2`
   font-size: 48px;
   margin-bottom: 10px;
 
+
   @media (min-width: 768px) { 
   font-size: 20px;
   }
 
   @media (min-width: 1200px) { 
-    justify-content: center;
-    display: flex;
+
     height: 60px;
-    align-items: center;
+
     font-size: 28px;
   }
 
