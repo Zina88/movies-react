@@ -8,11 +8,9 @@ import { ThemeProvider } from 'styled-components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<StrictMode>
 		<BrowserRouter basename="movies-react">
 			<ThemeProvider theme={theme}>
 				<App />
 			</ThemeProvider>
 		</BrowserRouter>
-	</StrictMode>,
 );
