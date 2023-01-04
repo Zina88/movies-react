@@ -25,27 +25,42 @@ export const Item = styled.li`
   transition: all 300ms linear;
   margin-bottom: 7px;
   margin-right: 7px;
+  position: relative;
+`;
+
+export const Img = styled.img`
+  margin-bottom: 8px;
+  width: 100%;
 `;
 
 export const Name = styled.h3`
   color: ${p => p.theme.colors.primary};
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  font-size: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
 `;
 
 export const Rating = styled.p`
   text-align: center;
   margin-bottom: 10px;
-`;
+  font-size: 14px;
 
-export const Img = styled.img`
-  padding: 2px;
-  margin-bottom: 10px;
-  width: 100%;
+  @media (min-width: 1200px) {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
 `;
 
 export const Alert = styled.h3`

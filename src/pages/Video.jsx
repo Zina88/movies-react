@@ -1,53 +1,26 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import getVideo from 'services/getVideo';
-import * as basicLightbox from 'basiclightbox';
-import { Wrapper, Btn } from './Video.styles';
+import { Wrapper } from './Video.styles';
 
-export default function Video() {
-  const [video, setVideo] = useState({});
-  const { moviesId } = useParams();
-  const navigate = useNavigate();
+import React from 'react';
+import ReactPlayer from 'react-player';
 
-  useEffect(() => {
-    getVideo(moviesId).then(({ results }) => setVideo(results[0]));
-  }, [moviesId]);
+const Video = () => {
+	const [video, setVideo] = useState({});
+	const { moviesId } = useParams();
 
-  const onPlay = () => {
-    const { id, key } = video;
+	useEffect(() => {
+		getVideo(moviesId).then(({ results }) => setVideo(results[0]));
+	}, [moviesId]);
 
-    basicLightbox
-      .create(
-        `<iframe
-          id=${id}
-          src="https://youtube.com/embed/${key}"
-          width="420"
-          height="300"
-          frameborder="0"
-          allowfullscreen
-          allow="autoplay; encrypted-media"
-        ></iframe>`,
-      )
-      .show();
-  };
+	const { key } = video;
 
-  const back = () => {
-    navigate(-1);
-  };
+	return (
+		<Wrapper>
+			<ReactPlayer url={`https://www.youtube.com/embed/${key}`} width="100%" controls={true} />
+		</Wrapper>
+	);
+};
 
-  return (
-    video && (
-      <div>
-        <Wrapper>
-          <Btn type="button" onClick={onPlay}>
-            Play
-          </Btn>
-
-          <Btn type="button" onClick={back}>
-            Back
-          </Btn>
-        </Wrapper>
-      </div>
-    )
-  );
-}
+export default Video;

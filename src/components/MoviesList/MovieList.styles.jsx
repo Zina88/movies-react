@@ -31,6 +31,7 @@ export const List = styles.ul`
   `;
 
 export const Item = styles.li`
+  position: relative;
   list-style: none;
   text-align: center;
   margin-bottom: 7px;
@@ -48,42 +49,39 @@ export const Item = styles.li`
 `;
 
 export const Img = styles.img`
-margin-bottom: 10px;
-min-width: 100%;
-height: 80%;
+  margin-bottom: 8px;
+  width: 100%
+  
 `;
 
 export const Title = styles.h2`
-  font-size: 48px;
-  margin-bottom: 10px;
-
+  font-size: 22px;
+  margin-bottom: 8px;
 
   @media (min-width: 768px) { 
-  font-size: 20px;
+    font-size: 18px;
   }
 
   @media (min-width: 1200px) { 
-
-    height: 60px;
-
-    font-size: 28px;
+    margin-bottom: 10px;
+    font-size: 20px;
   }
-
-
 `;
 
 export const VoteWrapper = styles.div`
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around; 
-  font-size: 24px;
+  justify-content: center; 
+  font-size: 20px;
+  margin-bottom: 15px;
 
  @media (min-width: 768px) { 
   font-size: 14px;
   }
 
-   @media (min-width: 1200px) { 
-
+    @media (min-width: 1200px) { 
+    margin-bottom: 10px;
+    font-size: 12px;
   }
 `;
 
@@ -93,4 +91,5 @@ color: inherit;
 
 export const Vote = styles.b`
 color: ${p => p.theme.colors.accent};
+margin-right: 10px;
 `;

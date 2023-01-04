@@ -1,9 +1,17 @@
 import styles from 'styled-components';
-
+// padding: 15px;
 export const Wrapper = styles.div`
-display: flex;
-justify-content: space-between;
-padding: 15px;
+    min-width: 300px;  
+    padding: 15px;
+
+  @media (min-width: 768px) {
+    width: 640px;  
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1200px) {
+      width: 700px;
+  }
 `;
 
 export const Btn = styles.button`

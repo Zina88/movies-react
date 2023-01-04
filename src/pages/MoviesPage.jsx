@@ -5,22 +5,22 @@ import SearchBox from 'components/SearchBox';
 import MoviesList from 'components/MoviesList';
 
 export default function MoviesPage() {
-  const [movies, setMovies] = useState(null);
-  const { search } = useLocation();
-  const query = new URLSearchParams(search).get('query') ?? '';
+	const [movies, setMovies] = useState(null);
+	const { search } = useLocation();
+	const query = new URLSearchParams(search).get('query') ?? '';
 
-  useEffect(() => {
-    if (query !== '') {
-      getSearchMovie(query).then(({ results }) => {
-        setMovies(results);
-      });
-    }
-  }, [query]);
+	useEffect(() => {
+		if (query !== '') {
+			getSearchMovie(query).then(({ results }) => {
+				setMovies(results);
+			});
+		}
+	}, [query]);
 
-  return (
-    <div>
-      <SearchBox value={query} />
-      {movies && <MoviesList movies={movies} />}
-    </div>
-  );
+	return (
+		<div>
+			<SearchBox value={query} />
+			{movies && <MoviesList movies={movies} />}
+		</div>
+	);
 }

@@ -25,9 +25,9 @@ export default function CastList({ actors }) {
               src={profile_path ? `https://image.tmdb.org/t/p/w200/${profile_path}` : noAvatar}
               alt={name}
             />
-            <Name>{name}</Name>
+            <Name>{name.length > 14 ? name.slice(0, 13) + '...' : name}</Name>
             <Rating>
-              Rating: <b>{popularity}</b>
+              Rating: <b>{popularity ? popularity.toFixed(1) : '-'}</b>
             </Rating>
           </Item>
         ))}
