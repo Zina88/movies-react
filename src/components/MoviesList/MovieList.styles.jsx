@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styles.div`
 min-width: 320px;
+padding-top: 30px;
 
 @media (min-width: 768px) {
    min-width: 768px;
