@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/movies-react/static/css/main.511d0a57.css",
-    "main.js": "/movies-react/static/js/main.4e4d43ba.js",
-    "static/js/232.04c74156.chunk.js": "/movies-react/static/js/232.04c74156.chunk.js",
-    "static/js/831.cbfd82cd.chunk.js": "/movies-react/static/js/831.cbfd82cd.chunk.js",
-    "static/js/593.eae240eb.chunk.js": "/movies-react/static/js/593.eae240eb.chunk.js",
+    "main.js": "/movies-react/static/js/main.19d4939d.js",
+    "static/js/232.c4fbdab1.chunk.js": "/movies-react/static/js/232.c4fbdab1.chunk.js",
+    "static/js/831.c6122da7.chunk.js": "/movies-react/static/js/831.c6122da7.chunk.js",
+    "static/js/593.ddd62f3e.chunk.js": "/movies-react/static/js/593.ddd62f3e.chunk.js",
     "static/js/145.4ffcc265.chunk.js": "/movies-react/static/js/145.4ffcc265.chunk.js",
     "static/media/No_Poster.png": "/movies-react/static/media/No_Poster.68ae350692995e841a18.png",
     "static/media/No-Image.png": "/movies-react/static/media/No-Image.12e64bc7efc49e58e460.png",
     "index.html": "/movies-react/index.html",
     "main.511d0a57.css.map": "/movies-react/static/css/main.511d0a57.css.map",
-    "main.4e4d43ba.js.map": "/movies-react/static/js/main.4e4d43ba.js.map",
-    "232.04c74156.chunk.js.map": "/movies-react/static/js/232.04c74156.chunk.js.map",
-    "831.cbfd82cd.chunk.js.map": "/movies-react/static/js/831.cbfd82cd.chunk.js.map",
-    "593.eae240eb.chunk.js.map": "/movies-react/static/js/593.eae240eb.chunk.js.map",
+    "main.19d4939d.js.map": "/movies-react/static/js/main.19d4939d.js.map",
+    "232.c4fbdab1.chunk.js.map": "/movies-react/static/js/232.c4fbdab1.chunk.js.map",
+    "831.c6122da7.chunk.js.map": "/movies-react/static/js/831.c6122da7.chunk.js.map",
+    "593.ddd62f3e.chunk.js.map": "/movies-react/static/js/593.ddd62f3e.chunk.js.map",
     "145.4ffcc265.chunk.js.map": "/movies-react/static/js/145.4ffcc265.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.511d0a57.css",
-    "static/js/main.4e4d43ba.js"
+    "static/js/main.19d4939d.js"
   ]
 }
