@@ -1,6 +1,6 @@
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
-const API_KEY = process.env.REACT_APP_KEY;
+const API_KEY = '8562b39677dad16e2334fc338fdc606e';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const getSearchMovies = async query => {
