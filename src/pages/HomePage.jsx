@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getTrandingMovie from 'services/api';
+import getTrandingMovie from 'services/getTradingMovie';
 import MoviesList from 'components/MoviesList';
 import { Wrapper, Title } from 'pages/Pages.styles';
 
@@ -33,7 +33,8 @@ export default function HomePage() {
 		if (
 			e.target.documentElement.scrollHeight -
 				(e.target.documentElement.scrollTop + window.innerHeight) <
-			100 && movies.length < totalCount
+				100 &&
+			movies.length < totalCount
 		) {
 			setFetching(true);
 		}

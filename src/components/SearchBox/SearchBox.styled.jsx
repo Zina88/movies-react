@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styles from 'styled-components';
 
-export const Input = styled.input`
+export const Input = styles.input`
 	width: 350px;
 	padding: 7px 20px;
 	border-radius: 8px 0 0 8px;
@@ -12,18 +12,18 @@ export const Input = styled.input`
 	}
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styles.div`
 	padding-top: 100px;
 `;
 
-export const Form = styled.form`
+export const Form = styles.form`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 15px;
 `;
 
-export const Button = styled.button`
+export const Button = styles.button`
 	width: 150px;
 
 	background-color: ${p => p.theme.colors.accent};
@@ -40,3 +40,5 @@ export const Button = styled.button`
 		border: 1px solid ${p => p.theme.colors.hover};
 	}
 `;
+
+
