@@ -12,7 +12,6 @@ const getSearchMovies = async (query, currentPage) => {
 	if (data.total_results === 0) {
 		Report.failure('Error', 'Invalid request', 'close');
 	}
-	console.log(data);
 	return data;
 };
 
