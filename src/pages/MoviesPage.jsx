@@ -7,7 +7,7 @@ import MoviesList from 'components/MoviesList';
 export default function MoviesPage() {
 	const [movies, setMovies] = useState([]);
 	const { search } = useLocation();
-	
+
 	const query = new URLSearchParams(search).get('query') ?? '';
 
 	useEffect(() => {
@@ -15,11 +15,12 @@ export default function MoviesPage() {
 			return;
 		}
 
-		getSearchMovie(query)
-			.then(response => {
+		if (query !== '') {
+			getSearchMovie(query).then(response => {
 				setMovies(response.results);
-			})
-			.finally(() => {});
+				return;
+			});
+		}
 	}, [query]);
 
 	return (
