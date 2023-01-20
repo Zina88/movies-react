@@ -8,7 +8,7 @@ export default function Header() {
 				Home
 			</Link>
 			<Link to="/movies">Movies</Link>
-			<Link to="/favourites">Favourites</Link>
+			<Link to="/favourites">Favourite</Link>
 		</Nav>
 	);
 }
