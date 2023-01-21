@@ -126,6 +126,10 @@ export const BackLogo = styles(TiArrowBackOutline)`
 	height: 15px;
 `;
 
+export const Overview = styles.p`
+padding-bottom: 40px;
+`;
+
 export const Favourites = styles.button`
 	position: absolute;
 	bottom: 15px;

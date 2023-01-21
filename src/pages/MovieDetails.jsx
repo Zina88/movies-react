@@ -8,12 +8,11 @@ import useLocalStorage from 'hooks/useLocalStorage';
 export default function MovieDetails() {
 	const { moviesId } = useParams();
 	const [movie, setMovie] = useState(null);
+	const [favourites, setFavourites] = useLocalStorage('movies', '');
 
 	useEffect(() => {
 		getMovieDetails(moviesId).then(setMovie);
 	}, [moviesId]);
-
-	const [favourites, setFavourites] = useLocalStorage('movies', '');
 
 	const addFavoriteMovie = movie => {
 		if (!movie) {

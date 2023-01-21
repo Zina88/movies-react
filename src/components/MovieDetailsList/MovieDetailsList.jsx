@@ -18,6 +18,7 @@ import {
 	CustLogo,
 	CustomList,
 	CustomItem,
+	Overview,
 	Favourites,
 } from './MovieDetailsList.styled';
 import noPoster from 'utilits/img/No_Poster.png';
@@ -66,10 +67,10 @@ export default function MovieDetailsList({ movie, handleFavouriteClick, children
 					<Genres>
 						Genres: {genres && genres.map(({ id, name }) => <Item key={id}>{name}</Item>)}
 					</Genres>
-					<p>
+					<Overview>
 						<b>Overview:</b> <br />
 						{overview}
-					</p>
+					</Overview>
 					<Favourites onClick={() => handleFavouriteClick(movie)}>{children}</Favourites>
 				</div>
 			</Wrapper>
