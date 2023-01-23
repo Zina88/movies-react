@@ -3,41 +3,13 @@ import { useState, useEffect } from 'react';
 import getMovieDetails from 'services/getMovieDetails';
 import MovieDetailsList from 'components/MovieDetailsList';
 
-import useLocalStorage from 'hooks/useLocalStorage';
-
 export default function MovieDetails() {
 	const { moviesId } = useParams();
 	const [movie, setMovie] = useState(null);
-	const [favourites, setFavourites] = useLocalStorage('movies', '');
 
 	useEffect(() => {
 		getMovieDetails(moviesId).then(setMovie);
 	}, [moviesId]);
 
-	const addFavoriteMovie = movie => {
-		if (!movie) {
-			return;
-		}
-		const newFavouriteList = [...favourites, movie];
-		setFavourites(newFavouriteList);
-	};
-
-	const removeFavouriteMovie = ({ id }) => {
-		const newFavouriteList = favourites.filter(favourite => favourite.id !== id);
-		setFavourites(newFavouriteList);
-	};
-
-	return (
-		<>
-			{movie && (
-				<MovieDetailsList
-					movie={movie}
-					handleFavouriteClick={
-						favourites.includes(movie) ? removeFavouriteMovie : addFavoriteMovie
-					}
-					children={favourites.includes(movie) ? 'Remove from favourites' : 'Add to favourites'}
-				/>
-			)}
-		</>
-	);
+	return <>{movie && <MovieDetailsList movie={movie} />}</>;
 }

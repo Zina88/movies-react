@@ -3,7 +3,7 @@ import useLocalStorage from 'hooks/useLocalStorage';
 import MoviesList from 'components/MoviesList';
 
 export default function Favourites() {
-	const [favourites] = useLocalStorage('movies', '');
+	const [favourites] = useLocalStorage('movies', []);
 
 	return (
 		<Wrapper>

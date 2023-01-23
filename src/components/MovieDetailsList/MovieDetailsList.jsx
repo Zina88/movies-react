@@ -26,14 +26,30 @@ import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 import Loader from 'components/Loader';
 
+import useLocalStorage from 'hooks/useLocalStorage';
+
 export default function MovieDetailsList({ movie, handleFavouriteClick, children }) {
 	const navigate = useNavigate();
 	const location = useLocation();
+	const [favourites, setFavourites] = useLocalStorage('movies', []);
 
 	const { original_title, genres, overview, poster_path, release_date, vote_average, vote_count } =
 		movie;
 
 	const back = () => navigate(location?.state?.from ?? '/');
+
+	const addFavoriteMovie = movie => {
+		if (!movie) {
+			return;
+		}
+		if (!favourites.some(f => f.id === movie.id)) {
+			setFavourites([...favourites, movie]);
+		}
+	};
+
+	const removeFavouriteMovie = ({ id }) => {
+		setFavourites([...favourites].filter(f => f.id !== id));
+	};
 
 	return (
 		<div>
@@ -71,7 +87,17 @@ export default function MovieDetailsList({ movie, handleFavouriteClick, children
 						<b>Overview:</b> <br />
 						{overview}
 					</Overview>
-					<Favourites onClick={() => handleFavouriteClick(movie)}>{children}</Favourites>
+					<Favourites
+						onClick={() => {
+							favourites.some(f => f.id === movie.id)
+								? removeFavouriteMovie(movie)
+								: addFavoriteMovie(movie);
+						}}
+					>
+						{favourites.some(f => f.id === movie.id)
+							? 'Remove from favourites'
+							: 'Add to favourites'}
+					</Favourites>
 				</div>
 			</Wrapper>
 
