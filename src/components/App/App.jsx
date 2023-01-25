@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Cast from 'pages/Cast';
 import Reviews from 'pages/Reviews';
 import Video from 'pages/Video';
+import NotFound from 'pages/NotFound';
 
 import Loader from 'components/Loader';
 import Header from 'components/Header';
@@ -14,7 +15,7 @@ const MovieDetails = lazy(() => import('pages/MovieDetails'));
 const FavouritesPage = lazy(() => import('pages/FavouritesPage'));
 
 function App() {
-  return (
+	return (
 		<>
 			<Header />
 
@@ -29,7 +30,7 @@ function App() {
 						<Route path="trailer" element={<Video />} />
 					</Route>
 
-					<Route path="*" element={<HomePage />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Suspense>
 		</>
